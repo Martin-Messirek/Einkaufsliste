@@ -21,11 +21,13 @@
     --prime_red: #FD5B4F;
     --sec_red: #FC2D1C;
     
-    --xsmall-spacing-base: 7px;
-    --small-spacing-base: 14px;
-    --spacing-base: 28px;
+    --spacing-xs: 7px;
+    --spacing-sm: 14px;
+    --spacing-md: 28px;
+    --spacing-lg: 56px;
+    --spacing-xl: 84px;
 
-    --border-radius: var(--spacing-base);
+    --border-radius: var(--spacing-md);
 
     --transition: all 175ms ease-in-out;
 }

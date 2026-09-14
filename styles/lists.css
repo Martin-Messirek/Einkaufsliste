@@ -1,10 +1,12 @@
-/* /* Styling für die App - Einkaufslisten */
+/* Styling für die Einkaufsliste */
 
 .shopping-list-header {
     text-align: center;
     color: var(--blue_1);
-    padding: var(--spacing-base);
+    padding: var(--spacing-md);
 }
+
+/* Einkaufsliste */
 
 .shopping-list-main {
     background-color: var(--white);
@@ -17,14 +19,14 @@
     display: flex;
     flex-flow: column;
     gap: 12px;
-    padding: var(--small-spacing-base);
+    padding: var(--spacing-sm);
     border-radius: var(--border-radius);
     overflow: auto;
 }
 
 .list-item {
     display: flex;
-    padding-block: var(--small-spacing-base);
+    padding-block: var(--spacing-sm);
     background-color: var(--blue_3);
     border: 1px solid var(--blue_1);
     border-radius: var(--border-radius);
@@ -43,7 +45,7 @@
 
 .list-item-text {
     flex: 2;
-    padding-left: var(--spacing-base);
+    padding-left: var(--spacing-md);
 }
 
 .list-item-quant {
@@ -51,11 +53,16 @@
 }
 
 .list-item-menu {
+    position: relative;
     width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: var(--small-spacing-base);
+    padding-right: var(--spacing-sm);
+}
+
+.list-item-menu p {
+   transition: var(--transition);
 }
 
 .list-item-menu p:hover {
@@ -64,16 +71,54 @@
     cursor: pointer;
 }
 
+/* 3-Punkte-Menü für einzelne Listeneinträge */
+
+.list-dialog {
+    position: absolute;
+    z-index: 3;
+    top: calc(-1 * var(--spacing-md));
+    left: calc(-1 * var(--spacing-xl));
+    padding: var(--spacing-sm);
+    border-radius: var(--spacing-xs);
+    background-color: var(--blue_7);
+    border: 1px solid var(--blue_9);
+}
+
+.list-dialog ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.list-dialog li {
+    padding: var(--spacing-xs);
+    border-radius: var(--spacing-xs);
+    background-color: var(--blue_8);
+    border: 1px solid var(--blue_9);
+    transition: var(--transition);
+}
+
+.list-dialog li:hover {
+    cursor: pointer;
+    background-color: var(--blue_6);
+}
+
+.list-dialog li:active {
+    background-color: var(--blue_5);
+}
+
+/* Menü ganz unten unter der Einkaufsliste */
+
 .list-main-menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: var(--small-spacing-base);
-    padding-inline: var(--small-spacing-base);;
+    gap: var(--spacing-sm);
+    padding-inline: var(--spacing-sm);;
 }
 
 .menu-tab {
-    padding-block: var(--small-spacing-base);
+    padding-block: var(--spacing-sm);
     border: 1px solid var(--blue_1);
     border-radius: var(--border-radius);
     flex: 1;
@@ -91,3 +136,4 @@
     background-color: var(--blue_1);
     transform: scale(0.99);
 }
+
