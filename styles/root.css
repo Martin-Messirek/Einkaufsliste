@@ -1,0 +1,14 @@
+/* Variablen */
+
+:root {
+    --bg_darkblue_dark: #06171E;
+    --bg_darkblue_light: #09212A;
+
+    --bg_blue_dark: #0D3240;
+    --bg_blue_light: #124658;
+
+    --prime_blue: #6BC1E1;
+
+    --prime_red: #FD5B4F;
+    --sec_red: #FC2D1C;
+}

@@ -1,0 +1,41 @@
+/* Styling-Standards für die gesamte Seite */
+
+
+html {
+    box-sizing: border-box; 
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0; 
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg_darkblue_dark);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+h2 {
+    color: var(--prime_blue);
+}
+
+.content-width {
+    max-width: 900px;
+    margin-inline: auto; /* Inhalt horizontal zentrieren */		
+    padding-inline: 1rem;
+} 
+
+.app-content-height {
+    min-height: 100vh; /* Höhe für ältere Browser */
+    min-height: 100dvh; /* Höhe für Mobilgeräte */
+}
+
