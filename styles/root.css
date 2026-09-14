@@ -8,7 +8,15 @@
     --bg_blue_light: #124658;
 
     --prime_blue: #6BC1E1;
+    --white: whitesmoke;
+
 
     --prime_red: #FD5B4F;
     --sec_red: #FC2D1C;
+
+
+
+    --spacing-base: 28px;
+    --border-radius: var(--spacing-base);
+    --transition: all 225ms ease-in-out;
 }

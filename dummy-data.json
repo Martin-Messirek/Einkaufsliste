@@ -1,0 +1,51 @@
+[
+  {
+    "list_id": 1,
+    "name": "Milch (1,5%)",
+    "quantity": "2 Liter",
+    "is_checked": true,
+    "added_by": 1
+  },
+  {
+    "list_id": 1,
+    "name": "Haferflocken",
+    "quantity": "1 Packung",
+    "is_checked": false,
+    "added_by": 2
+  },
+  {
+    "list_id": 1,
+    "name": "Äpfel",
+    "quantity": "1 kg",
+    "is_checked": false,
+    "added_by": 1
+  },
+  {
+    "list_id": 1,
+    "name": "Kaffee",
+    "quantity": "500g",
+    "is_checked": true,
+    "added_by": 3
+  },
+  {
+    "list_id": 2,
+    "name": "Chips",
+    "quantity": "3 Tüten",
+    "is_checked": false,
+    "added_by": 2
+  },
+  {
+    "list_id": 2,
+    "name": "Cola",
+    "quantity": "6 Flaschen",
+    "is_checked": false,
+    "added_by": 2
+  },
+  {
+    "list_id": 2,
+    "name": "Servietten",
+    "quantity": "1 Packung",
+    "is_checked": true,
+    "added_by": 1
+  }
+]
