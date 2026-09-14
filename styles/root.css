@@ -1,22 +1,31 @@
 /* Variablen */
 
 :root {
-    --bg_darkblue_dark: #06171E;
-    --bg_darkblue_light: #09212A;
+    --blue_1: hsl(198, 67%, 7%);
+    --blue_2: hsl(196, 65%, 10%);
 
-    --bg_blue_dark: #0D3240;
-    --bg_blue_light: #124658;
+    --blue_3: hsl(196, 66%, 15%);
+    --blue_4: hsl(195, 66%, 21%);
 
-    --prime_blue: #6BC1E1;
+    --blue_5: hsl(195, 66%, 26%);
+    --blue_6: hsl(195, 66%, 34%);
+
+    --blue_7: hsl(198, 51%, 47%);
+    --blue_8: hsl(197, 55%, 55%);
+   
+    --blue_9: hsl(196, 66%, 65%);
+    --blue_10: hsl(196, 66%, 75%);
+   
     --white: whitesmoke;
-
 
     --prime_red: #FD5B4F;
     --sec_red: #FC2D1C;
-
-
-
+    
+    --xsmall-spacing-base: 7px;
+    --small-spacing-base: 14px;
     --spacing-base: 28px;
+
     --border-radius: var(--spacing-base);
-    --transition: all 225ms ease-in-out;
+
+    --transition: all 175ms ease-in-out;
 }

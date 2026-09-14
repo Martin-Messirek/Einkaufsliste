@@ -1,85 +1,93 @@
 /* /* Styling für die App - Einkaufslisten */
 
+.shopping-list-header {
+    text-align: center;
+    color: var(--blue_1);
+    padding: var(--spacing-base);
+}
+
+.shopping-list-main {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    background-color: var(--blue_9);
+}
+
 .shopping-list {
-    background-color: var(--prime_blue);
+    
     display: flex;
     flex-flow: column;
     gap: 12px;
-    padding: 12px;
+    padding: var(--small-spacing-base);
     border-radius: var(--border-radius);
-    overflow: scroll;
-
+    overflow: auto;
 }
 
 .list-item {
     display: flex;
-    background-color: var(--bg_blue_dark);
-    /* background-color: blue; */
-
-    border: 1px solid var(--bg_darkblue_dark);
-    /* border: 1px solid red; */
+    padding-block: var(--small-spacing-base);
+    background-color: var(--blue_3);
+    border: 1px solid var(--blue_1);
     border-radius: var(--border-radius);
     transition: var(--transition);
-
-
 }
 
 .list-item:hover {
-    background-color: var(--bg_blue_light);
-    cursor: pointer;
-    transition: var(--transition);
-    transform: scale(1.01);
-    filter: brightness(1.05);
-    
+    background-color: var(--blue_5);
 }
 
 .list-item-entry {
     flex: 1;
     display: flex;
     gap: 12px;
-
 }
-/*
-
---bg_darkblue_dark: #06171E;
-    --bg_darkblue_light: #09212A;
-
-    --bg_blue_dark: #0D3240;
-    --bg_blue_light: #124658;
-
-    --prime_blue: #6BC1E1;
-
-
-
-*/
 
 .list-item-text {
     flex: 2;
     padding-left: var(--spacing-base);
-    
-
 }
 
 .list-item-quant {
     flex: 1;
-
 }
 
 .list-item-menu {
     width: 10%;
     display: flex;
+    justify-content: center;
     align-items: center;
+    padding-right: var(--small-spacing-base);
 }
 
-.list-item-menu:hover {
-
+.list-item-menu p:hover {
+    transform: scale(1.31);
+    filter: brightness(1.15);
+    cursor: pointer;
 }
 
-.main-menu {
-
+.list-main-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--small-spacing-base);
+    padding-inline: var(--small-spacing-base);;
 }
 
 .menu-tab {
-
+    padding-block: var(--small-spacing-base);
+    border: 1px solid var(--blue_1);
+    border-radius: var(--border-radius);
+    flex: 1;
+    background-color: var(--blue_3);
+    text-align: center;
 }
 
+.menu-tab:hover {
+    background-color: var(--blue_2);
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.menu-tab:active {
+    background-color: var(--blue_1);
+    transform: scale(0.99);
+}
