@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrierung</title>
+</head>
+<body>
+
+    <h2>Neuen Benutzer registrieren</h2>
+
+    <form action="newUserRegistration.php" method="POST">
+        <div>
+            <label for="username">Benutzername:</label><br>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div>
+            <label for="email">E-Mail-Adresse:</label><br>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+            <label for="password">Passwort:</label><br>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <br>
+        <button type="submit">Registrieren</button>
+    </form>
+
+</body>
+</html>
