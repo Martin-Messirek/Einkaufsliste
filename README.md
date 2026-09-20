@@ -6,18 +6,29 @@
 * [Voraussetzungen](#voraussetzungen)
 * [Installation](#installation)
 * [Datenbank](#datenbank)
-* [SQL → DBML](#sql--dbml)
+* [Diagramm mit DBML](#diagramm-mit-dbml)
+* [Diagramm mit Lucid](#diagramm-mit-lucid)
 * [Datenbankmodell](#datenbankmodell)
 * [Projektstruktur](#projektstruktur)
 * [Verwendung](#verwendung)
+* [Entwicklungsplan](#entwicklungsplan)
+* [Architektur](#architektur)
 * [Entwicklung](#entwicklung)
+* [Bekannte Probleme](#bekannte-probleme)
 * [Quellen](#quellen)
+* [Lizenz](#lizenz)
 
 ---
 
 ## Über das Projekt
 
-*Hier wird später kurz beschrieben, worum es bei dem Projekt geht und welchen Zweck es erfüllt.*
+Das **Einkaufsliste-Projekt** ist eine Webanwendung zur Verwaltung gemeinsamer Einkaufslisten.
+
+Das Projekt wird schrittweise entwickelt. Dabei wird die Anwendung von einer einfachen lokalen Version zu einer gemeinsam nutzbaren Anwendung mit Backend, Datenbank und späterer Internetanbindung erweitert.
+
+Ziel des Projekts ist es, verschiedene Technologien und Konzepte der Webentwicklung praktisch anzuwenden. Dazu gehören unter anderem **HTML, CSS, JavaScript, PHP, SQL, REST-APIs, Datenbanken und Git/GitHub**.
+
+Die einzelnen Entwicklungsschritte bauen aufeinander auf, sodass nach jedem größeren Schritt eine funktionsfähige Version der Anwendung vorhanden ist.
 
 ---
 
@@ -44,28 +55,15 @@ Beispielsweise:
 ```bash
 npm install
 ```
-
 ---
 
 ## Datenbank
 
 *Hier werden später Informationen zur verwendeten Datenbank dokumentiert.*
 
-### Datenbanksystem
-
-*Zum Beispiel: MySQL / MariaDB*
-
-### Datenbank erstellen
-
-*Hier können später die notwendigen SQL-Befehle ergänzt werden.*
-
-### Datenbankstruktur
-
-*Hier kann später die Struktur der Datenbank beschrieben oder auf die entsprechende Datei verwiesen werden.*
-
 ---
 
-## SQL → DBML
+## Diagramm mit DBML
 
 Um eine vorhandene SQL-Datei für [dbdiagram.io](https://dbdiagram.io/) zu verwenden, kann sie mit **sql2dbml** in das **DBML-Format** umgewandelt werden.
 
@@ -95,6 +93,24 @@ Die erzeugte `db.dbml` kann anschließend in [dbdiagram.io](https://dbdiagram.io
 
 ---
 
+## Diagramm mit Lucid
+
+Das Datenbankdiagramm kann alternativ mit [Lucid](https://lucid.app/) erstellt werden.
+
+Dazu wird der vorbereitete Diagramm-Code in Lucid eingefügt. Lucid erstellt daraus automatisch das entsprechende Diagramm.
+
+### Vorgehensweise
+
+1. [Lucid](https://lucid.app/) öffnen.
+2. Ein neues Diagramm erstellen.
+3. Den vorbereiteten Code in den entsprechenden Bereich einfügen.
+4. Das Diagramm aus dem Code generieren lassen.
+5. Das erstellte Diagramm bei Bedarf bearbeiten und anschließend exportieren.
+
+Der Vorteil dieser Methode ist, dass das Diagramm direkt aus dem Code erstellt werden kann und nicht jede Tabelle und Beziehung manuell gezeichnet werden muss.
+
+---
+
 ## Datenbankmodell
 
 Das Datenbankmodell wurde mit [dbdiagram.io](https://dbdiagram.io/) erstellt.
@@ -105,8 +121,6 @@ Beziehungen der Datenbank.
 ![Datenbankdiagramm](docs/database-diagram.png)
 
 ---
-
-## Projektstruktur
 
 ## Projektstruktur
 
@@ -167,6 +181,74 @@ Projekt/
 
 ```bash
 ...
+```
+
+---
+
+## Entwicklungsplan
+
+Die Entwicklung erfolgt schrittweise. Die wichtigsten Entwicklungsschritte sind:
+
+1. **Projektgrundlage**
+   - GitHub-Repository einrichten
+   - Entwicklungsumgebung vorbereiten
+   - Anforderungen und Projektstruktur festlegen
+
+2. **Lokale Einkaufsliste**
+   - Einkaufsartikel erstellen, anzeigen, bearbeiten und löschen
+   - einfache Benutzeroberfläche entwickeln
+   - zunächst lokale Speicherung der Daten
+
+3. **Backend und REST-API**
+   - Backend mit PHP erstellen
+   - API-Endpunkte für die Verwaltung der Einkaufsartikel
+   - Verbindung zwischen Frontend und Backend
+
+4. **SQL-Datenbank**
+   - Datenbankmodell erstellen
+   - Tabellen und Beziehungen definieren
+   - Backend mit der SQL-Datenbank verbinden
+   - CRUD-Operationen über die Datenbank
+
+5. **Gemeinsame Nutzung**
+   - Anwendung für mehrere Benutzer vorbereiten
+   - gleichzeitige Verwendung in mehreren Browsern testen
+   - Umgang mit Änderungen und veralteten Daten untersuchen
+
+6. **Veröffentlichung im Internet**
+   - Linux-Server bzw. VPS verwenden
+   - Backend und Datenbank auf dem Server bereitstellen
+   - Webserver konfigurieren
+   - Anwendung über das Internet erreichbar machen
+
+7. **Automatische Aktualisierung**
+   - regelmäßige Abfragen des Servers (Polling)
+   - Einkaufsliste automatisch aktualisieren
+   - unnötige Datenübertragungen möglichst vermeiden
+
+Nach diesen sieben Schritten ist eine vollständige Basisversion der Anwendung vorhanden.
+
+Weitere Funktionen wie **WebSockets, mehrere Einkaufslisten, Archivierung, Auswertungen oder IoT-Anbindungen** können anschließend optional ergänzt werden.
+
+---
+
+## Architektur
+
+Die Anwendung wird grundsätzlich nach dem Prinzip einer Client-Server-Architektur aufgebaut.
+
+```text
+Benutzer
+   │
+   ▼
+Browser / Frontend
+   │
+   │ HTTP / REST
+   ▼
+Backend / API
+   │
+   │ SQL
+   ▼
+SQL-Datenbank
 ```
 
 ---
