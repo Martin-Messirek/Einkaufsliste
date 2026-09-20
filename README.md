@@ -7,6 +7,7 @@
 * [Installation](#installation)
 * [Datenbank](#datenbank)
 * [SQL → DBML](#sql--dbml)
+* [Datenbankmodell](#datenbankmodell)
 * [Projektstruktur](#projektstruktur)
 * [Verwendung](#verwendung)
 * [Entwicklung](#entwicklung)
@@ -94,18 +95,60 @@ Die erzeugte `db.dbml` kann anschließend in [dbdiagram.io](https://dbdiagram.io
 
 ---
 
+## Datenbankmodell
+
+Das Datenbankmodell wurde mit [dbdiagram.io](https://dbdiagram.io/) erstellt.
+
+Das Diagramm dient zur grafischen Darstellung der Tabellen, Attribute und
+Beziehungen der Datenbank.
+
+![Datenbankdiagramm](docs/database-diagram.png)
+
+---
+
 ## Projektstruktur
 
-*Hier wird später die Struktur der Dateien und Ordner erklärt.*
+## Projektstruktur
 
-Beispiel:
+Die Projektstruktur ist wie folgt aufgebaut:
 
 ```text
 Projekt/
-├── README.md
+├── AddToListForm.html
 ├── db.sql
-├── db.dbml
-└── ...
+├── index.html
+├── insert_items.php
+├── newUserRegistration.php
+├── README.md
+├── registrationHTML.html
+├── SuccessfulRegistration.html
+│
+├── assets/
+│   ├── fonts/
+│   ├── icons/
+│   └── img/
+│
+├── docs/
+│   ├── database-diagram.png
+│   ├── database-diagram.svg
+│   │
+│   ├── dbml/
+│   │   ├── db.dbml
+│   │   └── dbml-error.log
+│   │
+│   └── sample-data/
+│       └── sample-data.json
+│
+├── scripts/
+│   ├── list.js
+│   └── script.js
+│
+└── styles/
+    ├── lists.css
+    ├── responsive.css
+    ├── root.css
+    ├── standard.css
+    └── style.css
 ```
 
 ---
