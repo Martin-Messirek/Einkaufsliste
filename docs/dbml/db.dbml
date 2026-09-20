@@ -1,0 +1,73 @@
+Table "users" {
+  "id" INT [pk, increment]
+  "username" VARCHAR(50) [unique, not null]
+  "email" VARCHAR(100) [unique, not null]
+  "password_hash" VARCHAR(255) [not null]
+  "created_at" TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+Table "shopping_lists" {
+  "id" INT [pk, increment]
+  "title" VARCHAR(100) [not null]
+  "owner_id" INT [not null]
+  "created_at" TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+Table "list_members" {
+  "user_id" INT [not null]
+  "list_id" INT [not null]
+  "role" VARCHAR(20) [default: 'editor']
+
+  Indexes {
+    (user_id, list_id) [pk]
+  }
+}
+
+Table "items" {
+  "id" INT [pk, increment]
+  "list_id" INT [not null]
+  "name" VARCHAR(100) [not null]
+  "quantity" VARCHAR(50) [default: '1']
+  "is_checked" BOOLEAN [default: FALSE]
+  "added_by" INT
+  "created_at" TIMESTAMP [default: `CURRENT_TIMESTAMP`]
+}
+
+Ref:"users"."id" <? "shopping_lists"."owner_id" [delete: cascade]
+
+Ref:"users"."id" <? "list_members"."user_id" [delete: cascade]
+
+Ref:"shopping_lists"."id" <? "list_members"."list_id" [delete: cascade]
+
+Ref:"shopping_lists"."id" <? "items"."list_id" [delete: cascade]
+
+Ref:"users"."id" ?<? "items"."added_by" [delete: set null]
+
+Records users(username, email, password_hash) {
+  'anna_schmidt', 'anna@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+  'max_mustermann', 'max@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+  'sarah_wagner', 'sarah@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+}
+
+Records shopping_lists(title, owner_id) {
+  'Wocheneinkauf WG', 1
+  'Geburtstagsparty', 2
+}
+
+Records list_members(user_id, list_id, role) {
+  1, 1, 'owner'
+  2, 1, 'editor'
+  3, 1, 'viewer'
+  2, 2, 'owner'
+  1, 2, 'editor'
+}
+
+Records items(list_id, name, quantity, is_checked, added_by) {
+  1, 'Milch (1,5%)', '2 Liter', true, 1
+  1, 'Haferflocken', '1 Packung', false, 2
+  1, 'Äpfel', '1 kg', false, 1
+  1, 'Kaffee', '500g', true, 3
+  2, 'Chips', '3 Tüten', false, 2
+  2, 'Cola', '6 Flaschen', false, 2
+  2, 'Servietten', '1 Packung', true, 1
+}
